@@ -1,9 +1,9 @@
 // Constants and variables for factors and prices
 const basePrices = {
-  warmshell: { Mumbai: 3500, Ahmedabad: 2000, Hyderabad: 2500 },
-  bareshell: { Mumbai: 4250, Ahmedabad: 2750, Hyderabad: 3250 },
-  renovation: { Mumbai: 4000, Ahmedabad: 2500, Hyderabad: 3000 },
-  architecture: { Mumbai: 6000, Ahmedabad: 5000, Hyderabad: 6000 },
+  warmshell: { Mumbai: 3500, Ahmedabad: 2000, Hyderabad: 2500, "Metro City 1" : 3500, "Metro City Outskirts" : 2000, "Metro City 2" :2500 },
+  bareshell: { Mumbai: 4250, Ahmedabad: 2750, Hyderabad: 3250, "Metro City 1" :4250, "Metro City Outskirts" : 2750, "Metro City 2" :3250  },
+  renovation: { Mumbai: 4000, Ahmedabad: 2500, Hyderabad: 3000,"Metro City 1" : 4000, "Metro City Outskirts" : 2500, "Metro City 2" :3000  },
+  architecture: { Mumbai: 6000, Ahmedabad: 5000, Hyderabad: 6000 ,"Metro City 1" : 6000, "Metro City Outskirts" : 5000, "Metro City 2" :6000 },
 };
 
 const propertyFactors = {
@@ -37,14 +37,14 @@ const planFactors = {
 };
 
 const addOnPrices = {
-  "Automation": { Mumbai: 350, Ahmedabad: 200, Hyderabad: 250 },
-  "Civil Changes": { Mumbai: 150, Ahmedabad: 50, Hyderabad: 100 },
-  "Fire Fighting": { Mumbai: 25, Ahmedabad: 25, Hyderabad: 25 },
-  "Flooring": 	{Mumbai: 350,	Ahmedabad: 200, Hyderabad:	250},
-  "Hvac": 	{Mumbai: 450, Ahmedabad: 400,	Hyderabad: 400},
-  "House Keeping": 	{Mumbai: 20, Ahmedabad: 12.5, Hyderabad:	15},
-  "Pest Control":	{Mumbai: 10, Ahmedabad:	10, Hyderabad:	10},
-  "Surveillance":	{Mumbai: 50, Ahmedabad:	50, Hyderabad:	50}
+  "Automation": { Mumbai: 350, Ahmedabad: 200, Hyderabad: 250,"Metro City 1" : 350, "Metro City Outskirts" : 200, "Metro City 2" :250  },
+  "Civil Changes": { Mumbai: 150, Ahmedabad: 50, Hyderabad: 100,"Metro City 1" : 150, "Metro City Outskirts" : 50, "Metro City 2" :100  },
+  "Fire Fighting": { Mumbai: 25, Ahmedabad: 25, Hyderabad: 25,"Metro City 1" : 25, "Metro City Outskirts" : 25, "Metro City 2" :25  },
+  "Flooring": 	{Mumbai: 350,	Ahmedabad: 200, Hyderabad:	250,"Metro City 1" : 350, "Metro City Outskirts" : 200, "Metro City 2" :250 },
+  "Hvac": 	{Mumbai: 450, Ahmedabad: 400,	Hyderabad: 400,"Metro City 1" : 450, "Metro City Outskirts" : 400, "Metro City 2" :400 },
+  "House Keeping": 	{Mumbai: 20, Ahmedabad: 12.5, Hyderabad:	15,"Metro City 1" : 20, "Metro City Outskirts" : 12.5, "Metro City 2" :15 },
+  "Pest Control":	{Mumbai: 10, Ahmedabad:	10, Hyderabad:	10,"Metro City 1" : 10, "Metro City Outskirts" : 10, "Metro City 2" :10 },
+  "Surveillance":	{Mumbai: 50, Ahmedabad:	50, Hyderabad:	50,"Metro City 1" : 50, "Metro City Outskirts" : 50, "Metro City 2" :50 }
 
   // ...other add-ons
 };
@@ -166,6 +166,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const selections = gatherUserSelections();
   const estimatedPrice = calculateEstimate(selections);
   updateResultOutput(estimatedPrice, selections);
+  window.scrollTo({ top: 0, behavior: "smooth" });
   
 });
 
