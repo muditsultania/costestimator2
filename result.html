@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Estimation Result</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1><img class="logo" src="companylogo.jpg" alt="UIPL"></h1>
-<!-- In result.html -->
-<div id="result">
-    <!-- The result box content will be updated by JavaScript -->
-  </div>
-  
+    <!-- In result.html -->
+    <div id="result">
+      <!-- The result box content will be updated by JavaScript -->
+    </div>
+    
+    <button id="download-pdf-btn">Download PDF</button>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script> 
     // Function to get URL parameter by name
@@ -65,6 +66,5 @@
     });
 </script>
 
-<button id="download-pdf-btn">Download PDF</button>
 </body>
 </html>
