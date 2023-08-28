@@ -1,99 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Interior Design Price Estimator</title>
-</head>
-<body>
-    <h1>U & I Interiors' Price Estimator</h1>
-    <form id="estimator-form">
-        <label for="property-type">Property Type:</label>
-        <select id="property-type" name="property-type">
-            <option value="Bungalow">Bungalow</option>
-            <option value="Apartment">Apartment</option>
-            <option value="Farmhouse">Farmhouse</option>
-            <option value="Villa">Villa</option>
-        </select>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Interior Design Price Estimator</title>
+    </head>
+    <body>
+        <div class="content"></div>
+        <h1>U & I Interiors</h1>
+        <h2>BudgetBliss<br></h2><h3> Discover blissful budgeting at U&I Interiors </h3>
+        
+        <div class="result-box">
+            <h2>Estimation Results</h2>
+            <p><strong>Project Type:</strong> <span id="result-project-type"></span></p>
+            <p><strong>City:</strong> <span id="result-city"></span></p>
+            <p><strong>Property Type:</strong> <span id="result-property-type"></span></p>
+            <p><strong>Styling:</strong> <span id="result-styling"></span></p>
+            <p><strong>Ceiling Height:</strong> <span id="result-ceiling-height"></span></p>
+            <p><strong>Plan Type:</strong> <span id="result-plan-type"></span></p>
+            <p><strong>Carpet Area:</strong> <span id="result-carpet-area"></span> sq. ft.</p>
+            <p><strong>Add-ons:</strong> <span id="result-add-ons"></span></p>
+            <h4>Estimated Price:</h4>
+            <p><strong>₹<span id="result-estimated-price"></span></strong></p>
+        </div>
 
-        <label for="profession">Profession:</label>
-        <input type="text" id="profession" name="profession">
+            
+            <div class="input-container">
+                <label for="property-type" class="input-label-property">Property Type:</label>
+                <div class="button-group" id="property-type-buttons">
+                    <button class="button-option-property" data-value="Apartment">Apartment</button>
+                    <button class="button-option-property" data-value="Bungalow">Bungalow</button>
+                    <button class="button-option-property" data-value="Farmhouse">Farmhouse</button>
+                    <button class="button-option-property" data-value="Villa">Villa</button>
+                    <!-- Add more property type buttons here -->
+                </div>
+                  </div>
+                  <div class="input-container">
+                    <label for="city" class="input-label-city">City:</label>
+                    <div class="button-group" id="city-buttons">
+                      <button class="button-option-city" data-value="Mumbai">Mumbai</button>
+                      <button class="button-option-city" data-value="Ahmedabad">Ahmedabad</button>
+                      <button class="button-option-city" data-value="Hyderabad">Hyderabad</button>
+                      <button class="button-option-city" data-value="Metro City 1">Metro City 1</button>
+                      <button class="button-option-city" data-value="Metro City 2">Metro City 2</button>
+                      <button class="button-option-city" data-value="Metro City Outskirts">Metro City Outskirts</button>
+                      <!-- Add more city buttons here -->
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                  <label for="ceiling-height" class="input-label-ceiling">Ceiling Height:</label>
+                  <div class="button-group" id="ceiling-height-buttons">
+                    <button class="button-option-ceiling" data-value="10ft">10 ft</button>
+                    <button class="button-option-ceiling" data-value="11ft">11 ft</button>
+                    <button class="button-option-ceiling" data-value="12ft">12 ft</button>
+                    <button class="button-option-ceiling" data-value="13ft">13 ft</button>
+                    <button class="button-option-ceiling" data-value="14ft">14 ft</button>
+                    <button class="button-option-ceiling" data-value="14ft+">14 ft+</button>
+                    <!-- Add more ceiling height buttons here -->
+                  </div>
+                </div>
+                
+                <div class="input-container">
+                  <label for="styling" class="input-label-styling">Styling:</label>
+                  <div class="button-group" id="styling-buttons">
+                    <button class="button-option-styling" data-value="Low">Low</button>
+                    <button class="button-option-styling" data-value="Medium">Medium</button>
+                    <button class="button-option-styling" data-value="High">High</button>
+                    <button class="button-option-styling" data-value="Very High">Very High</button>
+                    <!-- Add more styling buttons here -->
+                  </div>
+                </div>
+                
+                
+        <div class="input-container">
+            <label for="project-type" class="input-label-project">Project Type:</label>
+            <div class="button-group" id="project-type-buttons">
+              <button class="button-option-project" data-value="warmshell">Warmshell</button>
+              <button class="button-option-project" data-value="bareshell">Bareshell</button>
+              <button class="button-option-project" data-value="renovation">Interior Renovation</button>
+              <button class="button-option-project" data-value="architecture">Architecture</button>
+            </div>
+          </div>
+          
+          
+          <div class="input-container">
+            <label for="carpet-area" class="input-label-carpetarea">Carpet Area <br>(sq. ft.):</label>
+            <input type="number" id="carpet-area" placeholder="Enter carpet area" class="text-input">
+    </div>
+          
+          
+                    <div class="input-container">
+                      <label class="input-label-addons">Add ons *:</label>
+                      <div class="checkbox-group" id="add-ons-container">
+                        <!-- Checkboxes will be generated here -->
+                      </div>
+                    </div>
 
-        <label for="city">City:</label>
-        <select id="city" name="city">
-            <option value="Ahmedabad">Ahmedabad</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Other">Other</option>
-        </select>
+          <div class="input-container">
+            <label for="plan" class="input-label-plan">Plan Type:</label>
+            <div class="button-group" id="plan-buttons">
+              <button class="button-option-plan" data-value="Premium">Premium</button>
+              <button class="button-option-plan" data-value="Premium Plus">Premium Plus</button>
+              <button class="button-option-plan" data-value="Luxury">Luxury</button>
+              <button class="button-option-plan" data-value="Ultra Luxury">Ultra Luxury</button>
+              <!-- Add more plan type buttons here -->
+            </div>
+          </div>
+          
+          
 
-        <label for="ceiling-height">Ceiling Height:</label>
-        <select id="ceiling-height" name="ceiling-height">
-            <option value="10ft">10 ft</option>
-            <option value="11ft">11 ft</option>
-            <option value="12ft">12 ft</option>
-            <option value="13ft">13 ft</option>
-            <option value="14ft">14 ft</option>
-            <option value="14ft+">14 ft+</option>
-        </select>
-
-        <label for="project-type">Project Type:</label>
-        <select id="project-type" name="project-type">
-            <option value="Bareshell">Bareshell</option>
-            <option value="Warmshell">Warmshell</option>
-            <option value="Architecture">Architecture</option>
-            <option value="InteriorRennovation">Interior Rennovation</option>
-        </select>
-
-        <label for="carpet-area">Carpet Area (sq. ft.):</label>
-        <input type="number" id="carpet-area" name="carpet-area">
-
-        <label for="bhk">Number of BHK:</label>
-<select id="bhk" required>
-  <option value="">Select BHK</option>
-  <option value="1">1 BHK</option>
-  <option value="2">2 BHK</option>
-  <option value="3">3 BHK</option>
-  <option value="4">4 BHK</option>
-  <option value="5">5 BHK</option>
-  <option value="5+">5+ BHK</option>
-</select>
-
-<div id="rooms-container"></div>
-<button type="button" id="add-room-btn">Add Room</button>
-<div id="
- category-container">
-  <label>Select Categories:</label>
-  <div id="category-options">
-    <!-- Category checkboxes will be added dynamically here -->
-  </div>
+        <button type="button" id="calculate-btn">Calculate Estimate</button>
+        <a href="result.html"target="_blank"><button type="button" id="Confirm-btn">Confirm</button></a>
+    
+    
 </div>
+    
+    <div id="result"></div> 
 
-<div id="plan-container">
-    <label for="plan">Select Plan:</label>
-    <div class="plan-option">
-      <input type="radio" name="plan" value="Premium" id="plan-premium" required>
-      <label for="plan-premium" class="plan-title">Premium</label>
-      <p class="plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="plan-option">
-      <input type="radio" name="plan" value="Premium+" id="plan-premium-plus">
-      <label for="plan-premium-plus" class="plan-title">Premium+</label>
-      <p class="plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et sagittis dui.</p>
-    </div>
-    <div class="plan-option">
-      <input type="radio" name="plan" value="Luxury" id="plan-luxury">
-      <label for="plan-luxury" class="plan-title">Luxury</label>
-      <p class="plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla urna.</p>
-    </div>
-  </div>
-  
-<button type="button" id="calculate-btn">Calculate Estimate</button>
-  </form>
-
-  <div id="result"></div>
-
+  </body>
   <script src="script.js"></script>
-</body>
 </html>

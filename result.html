@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Estimation Result</title>
+</head>
+<body>
+    <h1>Estimation Result</h1>
+<!-- In result.html -->
+<div id="result">
+    <!-- The result box content will be updated by JavaScript -->
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script> 
+    // Function to get URL parameter by name
+  function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+      const results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    
+    // Get parameters from the URL
+    const projectType = getParameterByName("projectType");
+    const city = getParameterByName("city");
+    const propertyType = getParameterByName("propertyType");
+    const styling = getParameterByName("styling");
+    const ceilingHeight = getParameterByName("ceilingHeight");
+    const plan = getParameterByName("plan");
+  const carpetArea = parseFloat(getParameterByName("carpetArea"));
+  const selectedAddOns = getParameterByName("selectedAddOns").split(",");
+  const estimatedPrice = parseFloat(getParameterByName("estimatedPrice"));
+  
+  // Update the result box content
+  const resultContainer = document.getElementById("result");
+  resultContainer.innerHTML = `
+  <h2>Estimation Results</h2>
+  <p><strong>Project Type:</strong> ${projectType}</p>
+  <p><strong>City:</strong> ${city}</p>
+  <p><strong>Property Type:</strong> ${propertyType}</p>
+  <p><strong>Styling:</strong> ${styling}</p>
+  <p><strong>Ceiling Height:</strong> ${ceilingHeight}</p>
+  <p><strong>Plan Type:</strong> ${plan}</p>
+  <p><strong>Carpet Area:</strong> ${carpetArea} sq. ft.</p>
+  <p><strong>Add-ons:</strong> ${selectedAddOns.join(", ")}</p>
+  <h4>Estimated Price:</h4>
+  <p><strong>₹${estimatedPrice.toFixed(2)}</strong></p>`;
+  document.getElementById("download-pdf-btn").addEventListener("click", function () {
+      const resultContainer = document.getElementById("result"); // Adjust this to your result container's ID
+      const pdfOptions = {
+          margin: 10,
+          filename: "estimate.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        };
+        
+        html2pdf().from(resultContainer).set(pdfOptions).save();
+    });
+</script>
+
+<button id="download-pdf-btn">Download PDF</button>
+</body>
+</html>

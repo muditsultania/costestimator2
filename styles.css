@@ -1,24 +1,54 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background: #C9D1D9;
     margin: 0;
     padding: 0;
 }
-
-h1 {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    margin: 0;
+.logo {
+  width: 50px; /* Set the width of the logo */
+  height: 50px; /* Set the height of the logo */
+  background-image: url('companylogo.jpg'); /* Replace with the actual path to your logo image */
+  background-size: cover;
+  margin-right: 10px; /* Add margin to the right of the logo for spacing */
 }
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h1 {width: 100%;
+  
+  height: 111px;
+  flex-shrink: 0;
+  background: #89B8E7;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 0 0 0 0;
+  margin-bottom: 10%;
+  color: #000;
+  text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+  font-family: Alegreya;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+h2 {
+  font-family: Alegreya;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+h3 {
+  font-family: Alegreya;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+  margin-top: 0px;
 }
 
 label {
@@ -27,64 +57,451 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 
-select[multiple] {
-    height: auto;
-}
 
-#rooms .room {
-    margin-top: 10px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
-
-button {
-    display: block;
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 4px;
+button {width: 249px;
+  height: 74px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 5px solid #BDA081;
+  background: #4A6073;
+  box-shadow: 10px 10px 10px 20px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  align-self: auto;
+  color: #FFF;
+  font-family: Alegreya;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5%;
+  margin-left: 40%;
 }
 
 button:hover {
     background-color: #555;
 }
 
-/* Your existing CSS styles */
-
-#plan-container {
-    margin-top: 20px;
+/* 
+  
+  /* Add this to your styles.css file */
+/* Add this to your styles.css file */
+.content {
     display: flex;
-    gap: 20px;
-  }
-  
-  .plan-option {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-left: 0px;
+}
+.result-box {
+  width: 1500px;
+  height: 602px;
+  flex-shrink: 0;
+  border: 10px solid #728AA3;
+  background: #AEBECE;
+  box-shadow: 20px 20px 10px 5px rgba(0, 0, 0, 0.25) inset, 0px 3px 3px 3px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: Agency FB;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 0 0;
+
+}
+.clear {
+    clear: both;
+}
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start; /* Align to the left */
+  margin-bottom: 10px;
+}
+  .button-option {
+    width: 100%;
+    max-width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    margin: auto;
+    background-color: #f5f5f5;
     border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    flex: 1;
+    cursor: pointer;
   }
   
-  .plan-title {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 5px;
+  .button-option:hover {
+    background-color: #ddd;
+  }
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: flex-start; /* Align to the left side */
+    padding-left: 0px; /* Add left padding for space */
+    margin-top: auto;
+    padding-top: 10px;
+    margin-left: -20%;
   }
   
-  .plan-description {
-    font-size: 14px;
+  .input-label-project {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25);
+    border: 10px solid #313C47;
+    background: #4A6073;
+    color: #DDE9EC;
   }
   
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-left: -40px;
+    margin-right: 70px;
+    
+  }
+  
+  .button-option-project {
+    
+    border-radius: 20px;
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 0%;
+    border: 5px solid #BDA081;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    color: #0C0D0D;
+    background: #DDE9EC;
+
+  }
+  
+  .button-option:hover {
+    background-color: #ddd;
+  }
+  .input-label-city {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    border: 10px solid #485766;
+    background: #728AA3;
+    color: #DDE9EC;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25); /* Set a different background color */
+  }
+  
+  .button-option-city{
+    width: 130px;
+    height: 146px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #BDA081;
+    background: #DDE9EC;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    color: #0C0D0D;
+    font-family: Alegreya;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+   margin: auto;
+  }
+  
+  /* Rest of your existing styles */
+  .input-label-property {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    border: 10px solid #607386;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25); /* Set a different background color */
+    background: #8EA9C4;
+    color: #DDE9EC;
+  }
+  .button-option-property{
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #BDA081;
+    background: #DDE9EC;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    color: #0C0D0D;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin:auto;
+  }
+  /* Rest of your existing styles */
+  .input-label-styling {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25); /* Set a different background color */
+    border: 10px solid #3E4B57;
+    background: #405D79;
+    color: #DDE9EC;
+  }
+
+  .button-option-styling{
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #BDA081;
+    background: #DDE9EC;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    color: #0C0D0D;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: auto;
+}
+  
+  /* Rest of your existing styles */
+  .input-label-ceiling {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25); /* Set a different background color */
+    border: 10px solid #3E4B57;
+    background: #4B6A8A;
+    color: #DDE9EC;
+  }
+
+  .button-option-ceiling{
+    width: 130px;
+    height: 146px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #BDA081;
+    background: #DDE9EC;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: #0C0D0D;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: auto;
+  }
+  
+  /* Rest of your existing styles */
+  .input-label-plan {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25); /* Set a different background color */
+    border: 10px solid #0C0D0D;
+    color: #DDE9EC;
+    background: #273039;
+  }
+  
+  .button-option-plan {
+  width: 195px;
+  height: 340px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 5px solid #BDA081;
+  background: #DDE9EC;
+  box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+  color: #0C0D0D;
+  font-family: Alegreya;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  margin: auto;
+  line-height: normal;
+}
+  
+  /* Rest of your existing styles */
+  .input-label-carpetarea {
+    flex: 0 0 auto; /* Avoid label from expanding */
+    padding: 5px 10px; /* Add padding to the label box */
+    width: 198px;
+    height: 198px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-left: 20px;
+    margin: 0 18% 0 20%;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25);
+    border: 10px solid #141A20;
+    background: #3E4B57;
+    color: #DDE9EC;
+  }
+  
+  .text-box {width: 25%;
+    height:10%;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #BDA081;
+    background: #DDE9EC;
+    box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+    margin: auto;
+  }
+  
+  /* Rest of your existing styles */
+  .input-label-addons {
+    display: flex;
+    width: 264px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    margin: 0 20% 0 20%; 
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: #000;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+  
+  }
+  
+
+  
+  .checkbox-option label {
+    margin-left: 5px;
+    
+    color: #000;
+    font-family: Alegreya;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+}
+  
+  /* Rest of your existing styles */
+                
+  /* Add a new class for text inputs */
+.text-input {
+  width: 100%;
+  height: 74px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 5px solid #BDA081;
+  background: #DDE9EC;
+  box-shadow: 10px 10px 10px 20px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 30px; /* Adjust font size for text inputs */
+  padding: 10px; /* Add padding to the text input */
+  font-family: Alegreya;
+  margin-right: 100px;
+
+} 
+input[type="number"],
+.text-input {
+  width: 800px;
+height: 198px;
+flex-shrink: 0;
+border-radius: 20px;
+border: 5px solid #BDA081;
+background: #DDE9EC;
+box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
+  /* Keep the common styles here */
+}
+
+.button-selected {
+  border-radius: 20px;
+  border: 5px solid #BDA081;
+  background: #B9D1D7;
+  box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .button-option,
+  .text-input {
+    max-width: 100%;
+  }
+}
