@@ -84,7 +84,8 @@ function calculateEstimate() {
   document.getElementById('result-plan-type').textContent = plan;
   document.getElementById('result-carpet-area').textContent = carpetArea;
   document.getElementById('result-add-ons').textContent = addOnValues.join(', ');
-  document.getElementById('result-estimated-price').textContent = estimatedPrice.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  document.getElementById('result-estimated-price').textContent = estimatedPrice.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+
  // Display price with two decimal places
 }
 
@@ -194,7 +195,8 @@ function updateResultOutput(estimatedPrice, selections) {
     document.getElementById("result-plan-type").textContent = selections.plan;
     document.getElementById("result-carpet-area").textContent = selections.carpetArea;
     document.getElementById("result-add-ons").textContent = selections.selectedAddOns.join(", ");
-    document.getElementById("result-estimated-price").textContent = estimatedPrice;
+    document.getElementById("result-estimated-price").textContent = estimatedPrice.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+
 }
 
 // ... (rest of the code)

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
     <title>Estimation Result</title>
   </head>
   <body>
@@ -34,9 +35,9 @@
     const styling = getParameterByName("styling");
     const ceilingHeight = getParameterByName("ceilingHeight");
     const plan = getParameterByName("plan");
-  const carpetArea = parseFloat(getParameterByName("carpetArea"));
-  const selectedAddOns = getParameterByName("selectedAddOns").split(",");
-  const estimatedPrice = parseFloat(getParameterByName("estimatedPrice"));
+    const carpetArea = parseFloat(getParameterByName("carpetArea"));
+    const selectedAddOns = getParameterByName("selectedAddOns").split(",");
+    const estimatedPrice = parseFloat(getParameterByName("estimatedPrice"));
   
   // Update the result box content
   const resultContainer = document.getElementById("result");
@@ -50,8 +51,7 @@
   <p><strong>Plan Type:</strong> ${plan}</p>
   <p><strong>Carpet Area:</strong> ${carpetArea} sq. ft.</p>
   <p><strong>Add-ons:</strong> ${selectedAddOns.join(", ")}</p>
-  <h4>Estimated Price:</h4>
-  <p><strong>₹${estimatedPrice.toFixed(2)}</strong></p>`;
+  <p><strong>Estimated Price:</strong> ${estimatedPrice.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 })}</p>`;
   document.getElementById("download-pdf-btn").addEventListener("click", function () {
       const resultContainer = document.getElementById("result"); // Adjust this to your result container's ID
       const pdfOptions = {
