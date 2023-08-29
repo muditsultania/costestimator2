@@ -1,8 +1,10 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background: #C9D1D9;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background: #C9D1D9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .logo {
   width: 351.7px; /* Set the width of the logo */
@@ -517,84 +519,63 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
   }
 }
 
-/* Your existing styles remain unchanged */
-/* ... */
+/* Global Styles */
+
+
+/* Your specific styles */
 /* ... */
 
-/* Responsive design starts here */
+/* Media Queries for Responsiveness */
 
-@media only screen and (max-width: 1200px) {
-  /* CSS for Desktops and Laptops */
-  h1, h2, h3, h5 {
-    font-size: 40px;
-  }
-  button {
-    width: 200px;
-    height: 60px;
-    font-size: 20px;
-    margin-left: 30%;
-  }
-  .text-box, .text-input {
-    width: 70%;
-    height: 8%;
-  }
-  .button-option, .button-option-project, .button-option-property, .button-option-styling {
-    width: 150px;
-    height: 150px;
-    font-size: 20px;
-  }
-  .input-container {
-    margin-left: -10%;
-  }
+/* Large devices (laptops, desktops) */
+@media only screen and (min-width: 1025px) {
+.content, .result-box, .button-group {
+  max-width: 80%;
+  margin: auto;
+}
+.input-container {
+  justify-content: space-between;
+  margin-left: 0;
+}
 }
 
+/* Medium devices (tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+h1, h2, h3, h5 {
+  font-size: 32px;
+}
+button, .text-input, .text-box {
+  width: 80%;
+  height: 60px;
+  margin-left: 10%;
+}
+.button-option, .button-option-project, .button-option-property, .button-option-styling {
+  width: 150px;
+  height: 150px;
+}
+.input-container {
+  justify-content: space-between;
+  margin-left: 0;
+}
+}
+
+/* Small devices (phones) */
 @media only screen and (max-width: 768px) {
-  /* CSS for Tablets */
-  h1, h2, h3, h5 {
-    font-size: 30px;
-  }
-  button {
-    width: 150px;
-    height: 50px;
-    font-size: 18px;
-    margin-left: 20%;
-  }
-  .text-box, .text-input {
-    width: 100%;
-    height: 8%;
-  }
-  .button-option, .button-option-project, .button-option-property, .button-option-styling {
-    width: 120px;
-    height: 120px;
-    font-size: 18px;
-  }
-  .input-container {
-    margin-left: 0;
-  }
+h1, h2, h3, h5 {
+  font-size: 28px;
 }
-
-@media only screen and (max-width: 480px) {
-  /* CSS for Mobile Phones */
-  h1, h2, h3, h5 {
-    font-size: 24px;
-  }
-  button {
-    width: 120px;
-    height: 40px;
-    font-size: 16px;
-    margin-left: 10%;
-  }
-  .text-box, .text-input {
-    width: 100%;
-    height: 6%;
-  }
-  .button-option, .button-option-project, .button-option-property, .button-option-styling {
-    width: 100px;
-    height: 100px;
-    font-size: 16px;
-  }
-  .input-container {
-    margin-left: 0;
-  }
+button, .text-input, .text-box {
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
 }
-
+.button-option, .button-option-project, .button-option-property, .button-option-styling {
+  width: 100px;
+  height: 100px;
+}
+.input-container {
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+}
+}
