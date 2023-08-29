@@ -128,7 +128,7 @@ button:hover {
 }
 .button-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   justify-content: flex-start; /* Align to the left */
   margin-bottom: 10px;
@@ -444,9 +444,9 @@ button:hover {
     justify-content: center;
     flex-shrink: 0;
     text-align: center;
-    margin: 0 20% 0 20%; 
+    margin: 0 20% 0 16%; 
     font-family: Alegreya;
-    font-size: 14px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -469,7 +469,7 @@ button:hover {
     
     color: #000;
     font-family: Alegreya;
-    font-size: 12px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -515,7 +515,7 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
 /* Global Styles */
 
 
-@media only screen and (min-width : 390px){
+@media only screen and (max-width : 750px){
   body {
     font-family: Arial, sans-serif;
     background: #C9D1D9;
@@ -590,8 +590,8 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
   
   
   
-  button {width: 249px;
-    height: 74px;
+  button {width: 500px;
+    height: 150px;
     flex-shrink: 0;
     border-radius: 40px;
     border: 5px solid #BDA081;
@@ -626,7 +626,7 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
       margin-left: 0px;
   }
   .result-box {
-    width: 100%;
+    width: 1000px;
     height: 602px;
     flex-shrink: 0;
     border: 10px solid #728AA3;
@@ -964,7 +964,7 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
       justify-content: center;
       flex-shrink: 0;
       text-align: center;
-      margin: 0 20% 0 20%; 
+      margin: 0 20% 0 16%; 
       font-family: Alegreya;
       font-size: 25px;
       font-style: normal;
@@ -988,7 +988,7 @@ box-shadow: 20px 20px 20px 10px rgba(0, 0, 0, 0.25);
       
       color: #000;
       font-family: Alegreya;
-      font-size: 12px;
+      font-size: 20px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
