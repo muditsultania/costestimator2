@@ -205,7 +205,7 @@
     
                 // Capture the content of the elements using html2canvas
                 html2canvas(resultElement, { scale: 0.7 }).then(resultCanvas => {
-                    html2canvas(resultGridElement, { scale: 0.7 }).then(resultGridCanvas => {
+                    html2canvas(resultGridElement, { scale: 0.5 }).then(resultGridCanvas => {
                         // Add the result content to the PDF
                         pdf.addImage(resultCanvas, "JPEG", 10, 10, 0, 0);
     
