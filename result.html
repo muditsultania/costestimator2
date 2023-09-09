@@ -10,6 +10,22 @@
     <link rel="icon" href="favicon.ico">
     <title>Estimation Result</title>
     <style>
+        h7{width: 100%;
+            height: 200px;
+           flex-shrink: 0;
+           margin: 0 0 0 0;
+           margin-bottom: 5%;
+           color: #000;
+           text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+           font-family: Alegreya;
+           font-size: 50px;
+           font-style: normal;
+           font-weight: 700;
+           line-height: normal;
+           text-align: center;
+           margin-bottom: 10px;
+
+          }
     .result-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -29,25 +45,130 @@
           background-color: #f0f0f0;
             padding: 10px;
         }
+        .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+table {
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            border-spacing: 2px;
+            border-color: gray;
+            margin-top: 30px;
+            
+        }
+        
+
+      th, td {
+          border: 1px solid black;
+          padding: 10px;
+          text-align: left;
+          width: 6000px;
+      }
+      td input[type='number']{
+        width: 90%;
+       }
+
+      th {
+          background-color: #f2f2f2;
+      }
+
+    .Disclaimer{
+      font-size: 10px;
+    }
+    
+@page {
+  size: auto;   /* auto is the initial value */
+  margin: 0;  /* this affects the margin in the printer settings */
+}
+#EstimatedPriceCell{
+  background-color: #4A6073 ;
+}
+#scope li{
+  text-transform: lowercase;
+}
+#scope li::first-letter{
+  text-transform: uppercase;
+} 
+#CarpetAreaCell{
+    background-color: #4A6073;
+}
+td#description {
+    font-size: 10px;
+}
+td#Scope{
+    font-size: 10px;
+}
   </style>
 </head>
 <body>
     <h1><img class="logo" src="companylogo.jpg" alt="UIPL"></h1>
-    <!-- In result.html -->
-    
-    <div id="result">
-      <!-- The result box content will be updated by JavaScript -->
-    </div>
-    <div class="result-grid">
-      <div class="project-type-container" id="projectTypeContainer">
+    <div class="container">
+        <h7>Budget Bliss: Residential Turnkey</h7>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong> Project Details</strong></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><strong>Property Type</strong></td>
+                <td id="PropertyTypeCell"></td>
+            </tr>
+            <td><strong>Project Type</strong></td>
+            <td id = "ProjectTypeCell"></td>
+            
+        </tr>
+        <tr>
+            <td><strong>City</strong></td>
+            <td id="CityCell"></td>
+        </tr>
+        <td><strong>Styling</strong></td>
+        <td id="StylingCell"></td>
+    </tr>
+    <td><strong>Plan Type</strong></td>
+    <td id="PlanTypeCell"></td>
+</tr>
+<td><strong>Carpet Area (sq.ft)</strong></td>
+<td id="CarpetAreaCell"></td>
+</tr>
+<td><strong>Add-ons</strong></td>
+<td id="AddOnsCell"></td>
+</tr>
+<td><strong>Estimated Price</strong></td>
+<td id="EstimatedPriceCell"></td>
 
-      </div>
-      <div class="plan-type-container" id="planTypeContainer">
-        <!-- The plan type will be added here by JavaScript -->
-      </div>
+<table>
+    <thead>
+        <tr>
+            <th><strong>Project Inclusions</strong></th>
+            <th id = "TablePlan2"><strong>Plan Type: </strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="Scope"></td>
+            <td id="description"></td>
+        </tr>
         
-      
-    </div>
+        
+        
+    </tbody>
+</table>
+<div class = "Disclaimer">
+    
+    <strong>Disclaimer:</strong>
+    <br>
+    *This document is for informational purposes only and does not create any legally binding obligations. The figures presented are preliminary estimates and should not be considered as the final project cost but rather serve as a general guideline. It is essential to note that these estimates are subject to change, considering various factors that can impact project pricing based on market dynamics. For a precise project budget, consider utilising our design/turnkey contract services. Our expert consultation will guide you through the process.
+</div>
+
+</div>
+    
       
     <button id="download-pdf-btn">Download PDF</button>
 
@@ -64,52 +185,92 @@
         const selectedAddOns = urlParams.get("selectedAddOns").split(",");
         const estimatedPrice = parseFloat(urlParams.get("estimatedPrice"));
 
-        // Update the result box content
-        const resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = `
-        <h2>Estimation Results</h2>
-        <p><strong>Project Type:</strong> ${projectType}</p>
-        <p><strong>City:</strong> ${city}</p>
-        <p><strong>Property Type:</strong> ${propertyType}</p>
-        <p><strong>Styling:</strong> ${styling}</p>
-        <p><strong>Ceiling Height:</strong> ${ceilingHeight}</p>
-        <p><strong>Plan Type:</strong> ${plan}</p>
-        <p><strong>Carpet Area:</strong> ${carpetArea} sq. ft.</p>
-        <p><strong>Add-ons:</strong> ${selectedAddOns.join(", ")}</p>
-        <p><strong>Estimated Price:</strong> ${estimatedPrice.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 })}</p>`;
+           
+    const propertyTypeCell = document.getElementById("PropertyTypeCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    propertyTypeCell.textContent += propertyType.charAt(0).toUpperCase() + propertyType.slice(1);
+     
+    const projectTypeCell = document.getElementById("ProjectTypeCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    projectTypeCell.textContent += projectType.charAt(0).toUpperCase() + projectType.slice(1);
+     
+    const cityCell = document.getElementById("CityCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    cityCell.textContent += city.charAt(0).toUpperCase() + city.slice(1);
 
-        const ProjectTypeContainer = document.getElementById("projectTypeContainer")
-        
-        const planTypeContainer = document.getElementById("planTypeContainer");
+     
+    const stylingCell = document.getElementById("StylingCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    stylingCell.textContent += styling.charAt(0).toUpperCase() + styling.slice(1);
+     
+    const planTypeCell = document.getElementById("PlanTypeCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    planTypeCell.textContent += plan.charAt(0).toUpperCase() + plan.slice(1);
 
-        // Display plan type using flexbox
-        const planTypeContent = `
-            <p><h2>Plan Type: ${plan}</h2></p>
-            <div>${getPlanTypeDescription(plan)}</div>
-        `;
-        planTypeContainer.innerHTML = planTypeContent;
+     
+    const carpetAreaCell = document.getElementById("CarpetAreaCell");
+    
+    // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    carpetAreaCell.textContent += carpetArea;
 
-        function getPlanTypeDescription(planType) {
-            switch (planType) {
-                case "Premium":
-                    return "Premium Plan Type Description Here";
-                case "Premium Plus":
-                    return "Premium+ Plan Type Description Here";
-                case "Luxury":
-                    return "Luxury Plan Type Description Here";
-                case "Ultra Luxury":
-                    return "Ultra Luxury Plan Type Description Here";
-                default:
-                    return "Plan Type Description Not Available";
-            }
-        }
+    const addOnsCell = document.getElementById("AddOnsCell");
 
-        const projectPlan = projectType; // Assuming you can access the plan directly
+    addOnsCell.textContent += selectedAddOns.join(", ");
+    
+    const estimatedPriceCell = document.getElementById("EstimatedPriceCell");
 
-        let content = "<h2>Your Project Plan Contains:</h2><ul>";
+// Assuming totalCostParam is a numeric value, e.g., 10000
+const formattedPrice = parseFloat(estimatedPrice).toLocaleString("en-IN", {
+    style: "currency",
+    currency: "INR"
+});
 
-        if (projectPlan === "warmshell") {
-            content += `
+estimatedPriceCell.textContent = formattedPrice;
+const planTypeCell2 = document.getElementById("TablePlan2");
+
+    // Set the text content of the plan type cell to the value of selectedPlanTypeParam
+planTypeCell2.textContent += plan.charAt(0).toUpperCase() + plan.slice(1);
+    
+
+const planDescriptionList = document.getElementById("description");
+
+// Define the plan descriptions based on selectedPlanTypeParam
+let planDescription = "";
+
+if (plan === "Premium") {
+    planDescription = `
+    <li>Local Sourcing</li> <li>Budget-Friendly</li> <li>Standard Designing</li>  <li>Basic Accessories</li>
+    `;
+} else if (plan === "Premium Plus") {
+    planDescription = `
+    <li>Local Sourcing</li><li>Mid-Priced</li><li>Premium Designing</li> <li>Enhanced Accessories</li>
+    `;
+} else if (plan === "Luxury") {
+    planDescription = `
+    <li>Local & Global Sourcing</li><li>High-Priced</li><li>Lavish Designing</li><li>Premium Accessories</li>
+    `;
+} else if (plan === "Ultra Luxury") {
+    planDescription = `
+    <li>Local & Global Sourcing</li><li>Elite Pricing</li><li>Ultimate Designing</li><li>Luxury Accessories</li><li>Premium Imported Products</li>
+    `;
+} else {
+    planDescription = "Plan description not available.";
+}
+
+// Set the inner HTML of the planDescriptionList with the generated plan description
+planDescriptionList.innerHTML = planDescription;
+
+const scopeDiscriptionList = document.getElementById("Scope");
+let scopeDiscription ="";
+
+
+        if (projectType === "warmshell") {
+            scopeDiscription += `
             <li>Accessories</li>
             <li>Artifact</li>
             <li>Ceiling Treatment</li>
@@ -123,10 +284,9 @@
             <li>Soft Furnishings</li>
             <li>Wall Treatment</li>
             <li>Window Treatment</li>
-            <!-- ... other items ... -->
             `;
-        } else if (projectPlan === "bareshell") {
-            content += `
+        } else if (projectType === "bareshell") {
+            scopeDiscription += `
             <li>Accessories</li>
             <li>Artifact</li>
             <li>Ceiling Treatment</li>
@@ -147,10 +307,9 @@
             <li>Sanitary Ware</li>
             <li>Wall Tiles</li>
             <li>Waterproofing</li>
-            <!-- ... other items ... -->
             `;
-        } else if (projectPlan === "architecture") {
-            content += `
+        } else if (projectType === "architecture") {
+            scopeDiscription += `
             <li>Accessories</li>
             <li>Artifact</li>
             <li>Ceiling Treatment</li>
@@ -176,52 +335,44 @@
             <li>Fabrication</li>
             <li>Pest Control</li>
             <li>Doors</li>
-            <li>Door Frames</li>
-            <!-- ... other items ... -->
-            `;
-        }
+            <li>Door Frames</li> 
+             `;
+        } else if (projectType === "renovation"){
+            scopeDiscription += `
+            <li>Accessories</li>
+            <li>Artifact</li>
+            <li>Ceiling Treatment</li>
+            <li>Customized Furniture</li>
+            <li>Decorative Lights</li>
+            <li>Doors Renovation</li>
+            <li>Electrical</li>
+            <li>Fixed Lights</li>
+            <li>Fans</li>
+            <li>Readymade Furniture</li>
+            <li>Soft Furnishings</li>
+            <li>Wall Treatment</li>
+            <li>Window Treatment</li>
+            <li>Civil changes </li>
+            <li>Flooring </li>
+            <li>Kitchen Platform</li>
+            <li>Plumbing</li>
+            <li>Sanitary Ware</li>
+            <li>Wall Tiles</li>
+            <li>Waterproofing</li>`
 
-        content += "</ul>";
-        projectTypeContainer.innerHTML += content; // Append to existing content
+        }
+        scopeDiscriptionList.innerHTML = scopeDiscription;
        
        </script>
       
      
+    
       <script>
-        // ... Your previous code ...
-        window.jsPDF = window.jspdf.jsPDF;
         document.getElementById("download-pdf-btn").addEventListener("click", function () {
-            // Ensure html2canvas is loaded before using it
-            if (typeof html2canvas !== 'undefined') {
-                const pdf = new jsPDF({
-                    orientation: "portrait",
-                    unit: "mm",
-                    format: "a4"
-                });
-    
-                // Capture the result and result-grid elements
-                const resultElement = document.getElementById("result");
-                const resultGridElement = document.querySelector(".result-grid");
-    
-                // Capture the content of the elements using html2canvas
-                html2canvas(resultElement, { scale: 0.7 }).then(resultCanvas => {
-                    html2canvas(resultGridElement, { scale: 0.5 }).then(resultGridCanvas => {
-                        // Add the result content to the PDF
-                        pdf.addImage(resultCanvas, "JPEG", 10, 10, 0, 0);
-    
-                        // Add the result-grid content to the PDF
-                        pdf.addPage();
-                        pdf.addImage(resultGridCanvas, "JPEG", 10, 10, 0, 0);
-    
-                        // Save the PDF
-                        pdf.save("estimate.pdf");
-                    });
-                });
-            } else {
-                console.error("html2canvas is not loaded.");
-            }
+            window.print();
         });
     </script>
+    
     
 </body>
 </html>
